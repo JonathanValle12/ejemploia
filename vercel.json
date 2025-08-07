@@ -1,10 +1,6 @@
 {
   "builds": [
-    {
-      "src": "mi-frontend/package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "dist" }
-    },
+    { "src": "mi-frontend/package.json", "use": "@vercel/static-build", "config": { "distDir": "mi-frontend/dist" } },
     { "src": "mi-backend/index.js", "use": "@vercel/node" }
   ],
   "routes": [
