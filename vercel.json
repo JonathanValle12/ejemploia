@@ -10,12 +10,7 @@
     },
     {
       "src": "mi-backend/index.js",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": [
-          "mi-backend/**"
-        ]
-      }
+      "use": "@vercel/node"
     }
   ],
   "routes": [
