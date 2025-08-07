@@ -1,0 +1,8 @@
+{
+  "name": "ejemploia",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npm install --prefix mi-frontend && npm run build --prefix mi-frontend",
+    "dev":   "npm install --prefix mi-frontend && npm run dev --prefix mi-frontend"
+  }
+}
