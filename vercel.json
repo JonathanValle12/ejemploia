@@ -4,9 +4,7 @@
     {
       "src": "mi-frontend/package.json",
       "use": "@vercel/static-build",
-      "config": {
-        "distDir": "mi-frontend/dist"
-      }
+      "config": { "distDir": "build" }
     },
     {
       "src": "mi-backend/index.js",
@@ -15,18 +13,12 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/api/(.*)",
       "dest": "mi-backend/index.js"
     },
     {
       "src": "/(.*)",
-      "dest": "mi-frontend/dist/$1"
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/mi-backend/index.js"
+      "dest": "mi-frontend/index.html"
     }
   ]
 }
