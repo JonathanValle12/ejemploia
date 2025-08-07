@@ -1,14 +1,10 @@
-import express from 'express';
+import express from 'express'
+import serverless from 'serverless-http'
 
-const app = express();
-app.use(express.json());
-
+const app = express()
+app.use(express.json())
 app.get('/api/health', (req, res) => {
-    res.json({ status: 'OK!'})
+  res.json({ status: 'OK!' })
 })
 
-
-const port = process.env.PORT || 3001;
-app.listen(port, () => {
-    console.log(`Backend corriendo en http://localhost:${port}`)
-})
+export default serverless(app)

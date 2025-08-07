@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "devCommand": "npm run dev --prefix mi-frontend",
   "builds": [
     {
       "src": "mi-frontend/package.json",
@@ -16,9 +17,10 @@
       "src": "/api/(.*)",
       "dest": "mi-backend/index.js"
     },
+    { "handle": "filesystem" },
     {
       "src": "/(.*)",
-      "dest": "mi-frontend/index.html"
+      "dest": "mi-frontend/dist/index.html"
     }
   ]
 }
