@@ -1,14 +1,19 @@
 {
   "version": 2,
   "builds": [
-    { "src": "mi-frontend/package.json", "use": "@vercel/static-build", "config": { "distDir": "dist" } },
-    { "src": "mi-backend/api/[...all].js", "use": "@vercel/node" }
-  ],
-  "functions": {
-    "api/[...all].js": {
-      "includeFiles": "mi-backend/src/**"
+    {
+      "src": "mi-frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist" }
+    },
+    {
+      "src": "mi-backend/api/[...all].js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": "mi-backend/src/**"
+      }
     }
-  },
+  ],
   "routes": [
     { "src": "^/api/(.*)$", "dest": "/api/[...all].js" },
     { "handle": "filesystem" },
