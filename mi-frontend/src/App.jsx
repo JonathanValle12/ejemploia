@@ -2,26 +2,9 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { useEffect } from 'react'
 
 function App() {
   const [count, setCount] = useState(0)
-
-
-  useEffect(() => {
-    
-
-    const mensaje = async() => {
-      const result = await fetch('/api/health')
-      const data = await result.json();
-
-      console.log("Resultado: ", data);
-    }
-
-    mensaje();
-    
-  }, []);
-
 
   return (
     <>
