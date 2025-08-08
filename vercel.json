@@ -7,14 +7,13 @@
       "config": { "distDir": "dist" }
     },
     {
-      "src": "mi-backend/api/**/*.js",
+      "src": "mi-backend/api/index.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     { "src": "^/api/(.*)$", "dest": "mi-backend/api/index.js" },
-
-    { "src": "^(?!/api)(.*)$", "dest": "mi-frontend/dist/$1" },
-    { "src": "^/[^.]*$", "dest": "mi-frontend/dist/index.html" }
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "mi-frontend/dist/index.html" }
   ]
 }
